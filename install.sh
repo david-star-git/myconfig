@@ -27,4 +27,11 @@ sudo make clean install
 cd ~/suckless/dmenu
 sudo make clean install
 
+# Install yay
+cd ~
+pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+# Install LibreWolf
+yay -S --noconfirm librewolf-bin
+
 echo "Installation completed."
