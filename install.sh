@@ -9,11 +9,13 @@ sudo pacman -S --needed libxft libx11 libxinerama xorg-server xorg-xinit ttf-dej
 # Create directories if not exist
 mkdir -p ~/.config
 mkdir -p ~/.fonts
+mkdir -p ~/Pictures
 sudo mkdir -p /etc/xdg
 
 # Move files
 mv config/* ~/.config/
 mv fonts/* ~/.fonts/
+mv wallpaper.png ~/Pictures/
 sudo mv root/picom.conf /etc/xdg/
 
 # Move entire suckless folder
