@@ -5,7 +5,7 @@ feh --bg-fill ~/Pictures/wallpaper.png
 
 picom -b
 
-.xinitrc -> setxkbmap de
+setxkbmap de
 
 alias vim="nvim"
 
