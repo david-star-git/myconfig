@@ -37,6 +37,6 @@ cd ~
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 # Install LibreWolf
-yay -S --noconfirm librewolf-bin zsh-theme-powerlevel10k-git
+yay -S --noconfirm brave-bin zsh-theme-powerlevel10k-git
 
 echo "Installation completed."
