@@ -18,10 +18,25 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
 
+  -- Coc.nvim setup
+  use {'neoclide/coc.nvim', branch = 'release',
+    config = function()
+      vim.api.nvim_exec([[
+        autocmd FileType python setlocal makeprg=python\ -m\ py_compile\ %
+      ]], false)
+    end
+  }
+
+  -- Coc extensions
+  use 'neoclide/coc-python'
+  use 'neoclide/coc-json' -- for JavaScript/JSON
+  use 'neoclide/coc-java' -- for Java
+  use 'MaskRay/ccls' -- for C/C++
+  use 'simrat39/rust-tools.nvim' -- for Rust
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
-
+    
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
