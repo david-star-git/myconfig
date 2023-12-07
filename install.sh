@@ -4,7 +4,7 @@
 set -e
 
 # Install packages
-sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xrandr libxft libx11 libxinerama xorg-server xorg-xinit ttf-dejavu ttf-jetbrains-mono picom feh exa zsh-syntax-highlighting zsh-autosuggestions zip unzip bat bottom
+sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xrandr libxft libx11 libxinerama xorg-server xorg-xinit ttf-dejavu ttf-jetbrains-mono picom feh exa zsh-syntax-highlighting zsh-autosuggestions zip unzip bat bottom fzf
 
 # Create directories if not exist
 mkdir -p ~/.config
