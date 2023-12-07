@@ -21,7 +21,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+/*static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
+static const char *tags[] = { " \uf17c ", " \uf1d8 ", " \uf0ac ", " \uf109 ", " \uf09b ", " \uf02d ", " \uf044 ", " \uf1bc ", " \uf120 " };
 
 static const Rule rules[] = {
 	/* xprop(1):
