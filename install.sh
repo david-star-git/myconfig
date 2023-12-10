@@ -4,7 +4,7 @@
 set -e
 
 # Install packages
-sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xrandr libxft libx11 libxinerama xorg-server xorg-xinit ttf-dejavu ttf-jetbrains-mono picom feh exa zsh-syntax-highlighting zsh-autosuggestions zip unzip bat bottom fzf ly
+sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xrandr libxft libx11 libxinerama xorg-server xorg-xinit ttf-dejavu ttf-jetbrains-mono picom feh exa zsh-syntax-highlighting zsh-autosuggestions zip unzip bat bottom fzf
 
 # Create directories if not exist
 mkdir -p ~/.config
@@ -38,7 +38,5 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 
 # Install LibreWolf
 yay -S --noconfirm brave-bin zsh-theme-powerlevel10k-git
-
-sudo systemctl start ly.service
 
 echo "Installation completed."
