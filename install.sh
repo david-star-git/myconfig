@@ -4,18 +4,18 @@
 set -e
 
 # Install packages
-sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xrandr libxft libx11 libxinerama xorg-server xorg-xinit ttf-dejavu ttf-jetbrains-mono picom feh exa zsh-syntax-highlighting zsh-autosuggestions zip unzip bat bottom fzf
+sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xrandr libxft libx11 libxinerama xorg-server xorg-xinit ttf-dejavu ttf-jetbrains-mono picom feh exa zsh-syntax-highlighting zsh-autosuggestions zip unzip bat bottom fzf ly
 
 # Create directories if not exist
 mkdir -p ~/.config
 mkdir -p ~/.fonts
-mkdir -p ~/Pictures
+mkdir -p ~/wallpapers
 sudo mkdir -p /etc/xdg
 
 # Move files
 mv config/* ~/.config/
 mv fonts/* ~/.fonts/
-mv wallpaper.png ~/Pictures/
+mv wallpaper.png ~/wallpapers/
 sudo mv root/picom.conf /etc/xdg/
 
 # Move entire suckless folder
@@ -38,5 +38,7 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 
 # Install LibreWolf
 yay -S --noconfirm brave-bin zsh-theme-powerlevel10k-git
+
+sudo systemctl start ly.service
 
 echo "Installation completed."
