@@ -1,7 +1,7 @@
 #!/bin/sh
 
 xrandr --output "Virtual-1" --mode 1920x1080
-feh --bg-fill ~/Pictures/wallpaper.png
+feh --bg-fill ~/wallpapers/wallpaper.png
 
 picom -b
 
