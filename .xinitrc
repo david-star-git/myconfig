@@ -18,4 +18,6 @@ setxkbmap de
 
 alias vim="nvim"
 
+while true; do xsetroot -name "$( date +"%F %R" )"; sleep 1m; done &
+
 exec dwm
