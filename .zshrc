@@ -16,6 +16,7 @@ alias tree='exa --tree'
 alias zrc="$EDITOR $HOME/.zshrc"
 alias cat="bat"
 alias top="btm"
+alias neofetch="neofetch --ascii ~/.config/neofetch/cat.txt"
 
 print ""
 print ""
