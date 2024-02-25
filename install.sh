@@ -12,10 +12,8 @@ fi
 # Install packages
 sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xsetroot xorg-xrandr libxft libx11 libxinerama xorg-server xorg-xinit ttf-dejavu ttf-jetbrains-mono picom feh exa zsh-syntax-highlighting zsh-autosuggestions zip unzip bat bottom fzf acpi thefuck entr ripgrep rofi rofi-emoji rofi-calc stow nodejs
 
-#cd ~
-#mkdir -p .config
-#mkdir -p .fonts
-#mkdir -p home
+cd ~
+mkdir -p .fonts
 
 cd ~
 git clone https://github.com/david-star-git/dotfiles
@@ -31,6 +29,8 @@ sudo mv ~/myconfig/root/picom.conf /etc/xdg/
 # Move files
 mv ~/myconfig/scripts ~
 mv ~/myconfig/wallpapers ~
+mv ~/myconfig/fonts/* ~/.fonts
+mv ~/myconfig/cat.txt ~/.config/neofetch/
 
 # Build and install dwm
 cd ~/dwm
