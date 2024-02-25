@@ -13,20 +13,19 @@ fi
 sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xsetroot xorg-xrandr libxft libx11 libxinerama xorg-server xorg-xinit ttf-dejavu ttf-jetbrains-mono picom feh exa zsh-syntax-highlighting zsh-autosuggestions zip unzip bat bottom fzf acpi thefuck entr ripgrep rofi rofi-emoji rofi-calc stow nodejs
 
 cd ~
+mkdir suckless
+
 git clone https://github.com/david-star-git/dotfiles
 cd dotfiles
 stow -vSt ~ *
 
 # Root
 sudo mkdir -p /etc/xdg
-sudo mv root/picom.conf /etc/xdg/
+sudo mv ~/myconfig/root/picom.conf /etc/xdg/
 
 # Move files
-mv ~/dotfiles/scripts ~
-mv ~/dotfiles/wallpapers ~
-
-# Move entire suckless folder
-mv ~/dotfiles/suckless ~
+mv ~/myconfig/scripts ~
+mv ~/myconfig/wallpapers ~
 
 # Build and install dwm
 cd ~/suckless/dwm
