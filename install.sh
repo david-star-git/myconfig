@@ -15,7 +15,7 @@ sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xse
 cd ~
 git clone https://github.com/david-star-git/dotfiles
 cd dotfiles
-stow -vSt ~ *
+stow -vS *
 
 # Root
 sudo mkdir -p /etc/xdg
