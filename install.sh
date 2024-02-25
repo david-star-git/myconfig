@@ -22,8 +22,6 @@ cd dotfiles
 stow --adopt --no-fold *
 stow --adopt --no-fold -t ~/.config .config
 
-mv ~/home/* ~
-
 # Root
 sudo mkdir -p /etc/xdg
 sudo mv ~/myconfig/root/picom.conf /etc/xdg/
