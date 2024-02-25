@@ -14,7 +14,7 @@ sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xse
 
 cd ~
 mkdir -p .fonts
-mkdir -p .fonts
+mkdir -p .config
 
 cd ~
 git clone https://github.com/david-star-git/dotfiles
