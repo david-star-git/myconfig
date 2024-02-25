@@ -3,38 +3,40 @@
 # Enable error checking
 set -e
 
+# Check if the package manager is available
+if ! command -v pacman &> /dev/null; then
+    echo "Pacman package manager not found. This script is intended for Arch Linux."
+    exit 1
+fi
+
 # Install packages
-sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xsetroot xorg-xrandr libxft libx11 libxinerama xorg-server xorg-xinit ttf-dejavu ttf-jetbrains-mono picom feh exa zsh-syntax-highlighting zsh-autosuggestions zip unzip bat bottom fzf
+sudo pacman -S --needed neofetch alacritty zsh-history-substring-search xorg-xsetroot xorg-xrandr libxft libx11 libxinerama xorg-server xorg-xinit ttf-dejavu ttf-jetbrains-mono picom feh exa zsh-syntax-highlighting zsh-autosuggestions zip unzip bat bottom fzf acpi thefuck entr ripgrep rofi rofi-emoji rofi-calc stow nodejs
 
-# Create directories if not exist
-mkdir -p ~/.config
-mkdir -p ~/.fonts
-mkdir -p ~/wallpapers
+cd ~
+git clone https://github.com/david-star-git/dotfiles
+cd dotfiles
+stow -vSt ~ *
+
+# Root
 sudo mkdir -p /etc/xdg
-
-# Move files
-mv config/* ~/.config/
-mv fonts/* ~/.fonts/
-mv wallpaper.png ~/wallpapers/
 sudo mv root/picom.conf /etc/xdg/
 
-# Move entire suckless folder
-mv suckless ~
+# Move files
+mv ~/dotfiles/scripts ~
+mv ~/dotfiles/wallpapers ~
 
-# Move specific files
-mv .p10k.zsh .xinitrc .zshrc ~
+# Move entire suckless folder
+mv ~/dotfiles/suckless ~
 
 # Build and install dwm
 cd ~/suckless/dwm
 sudo make clean install
 
-# Build and install dmenu
-cd ~/suckless/dmenu
-sudo make clean install
-
 # Install yay
 cd ~
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+if ! command -v yay &> /dev/null; then
+    sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+fi
 
 # Install LibreWolf
 yay -S --noconfirm brave-bin zsh-theme-powerlevel10k-git
