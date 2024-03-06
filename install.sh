@@ -32,6 +32,7 @@ mv ~/myconfig/wallpapers ~
 mv ~/myconfig/fonts/* ~/.fonts
 mv ~/myconfig/cat.txt ~/.config/neofetch/
 
+chmod +x ~/scripts/*
 # Build and install dwm
 cd ~/dwm
 sudo make clean install
